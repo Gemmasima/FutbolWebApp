@@ -136,7 +136,7 @@ Error DFERR_PROGRAM "NavigateForward to this from-parent child Select view not y
             Set psCaption to "New"
 
             WebRegisterPath ntNavigateForward oZoomEntrenador 
-// ToDo: Gemma-> Entra en el formulario de nuevo pero no me deja guardar?? Me pasa con todos los Select menos con Posición
+// ToDo: Gemma-> Entra en el formulario de nuevo pero no me deja guardar?? Me pasa con todos los Select menos con Posición y Liga
 
             Procedure OnClick
                 Send NavigatePath

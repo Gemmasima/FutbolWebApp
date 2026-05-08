@@ -1,5 +1,5 @@
 Compiling Program: C:\DataFlex Projects\FutbolWebApp\AppSrc\WebApp.src
-Memory Available: 17724567552
+Memory Available: 17058144256
 1>Use AllWebAppClasses.pkg
 Using pre-compiled package ALLWEBAPPCLASSES.PKG
 Including file: AllWebAppClasses.x64.pkd    (C:\Program Files\DataFlex 25.0\Pkg\AllWebAppClasses.x64.pkd)
@@ -1809,7 +1809,8 @@ Including file: hijoentrenador.fd    (C:\DataFlex Projects\FutbolWebApp\DDSrc\hi
 37657>>>            Set psCSSClass to "WebClearMenuItem"
 37658>>>            Set psCaption to "New"
 37659>>>
-37659>>>            WebRegisterPath ntNavigateForward oZoomEntrenador //Entra en el formulario de nuevo pero no me deja guarda!!
+37659>>>            WebRegisterPath ntNavigateForward oZoomEntrenador 
+37665>>>// ToDo: Gemma-> Entra en el formulario de nuevo pero no me deja guardar?? Me pasa con todos los Select menos con Posición
 37665>>>
 37665>>>            Procedure OnClick
 37668>>>                Send NavigatePath
@@ -3486,7 +3487,7 @@ Including file: ZoomLiga.wo    (C:\DataFlex Projects\FutbolWebApp\AppSrc\ZoomLig
 39036>Send StartWebApp of oWebApp
 39037>
 Summary
-Memory Available: 17711767552
+Memory Available: 17045549056
 Total Warnings : 0
 Total Errors   : 0
 Total Symbols  : 25614
