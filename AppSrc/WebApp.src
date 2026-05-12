@@ -198,7 +198,8 @@ Object oWebApp is a cWebApp
     Use ZoomPosicion.wo
     Use ZoomEquipo.wo
     Use ZoomLiga.wo
-    Set phoDefaultView to oDashboard
+    //está es la última pantalla de la pila de pantallas
+    Set phoDefaultView to oDashboard 
 
 End_Object
 

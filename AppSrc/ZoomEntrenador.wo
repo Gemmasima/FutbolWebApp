@@ -23,11 +23,11 @@ Object oZoomEntrenador is a cWebView
 
     Object oliga_DD is a cligaDataDictionary
     End_Object 
-
+    //Equipo tienen una FK a Liga. La de arriba
     Object oequipo_DD is a cequipoDataDictionary
         Set DDO_Server To oliga_DD
     End_Object 
-
+    //Entrenador tiene una FK a Equipo. La de arriba
     Object oentrenador_DD is a centrenadorDataDictionary
         Set DDO_Server To oequipo_DD
     End_Object 
@@ -45,7 +45,7 @@ Object oZoomEntrenador is a cWebView
             Set piColumnSpan to 12
             Set piColumnIndex to 0
             Set peLabelPosition to lpTop
-            Set psLabel to "Nombre"
+            Set psLabel to "Nombre del Nuevo entrenador"
         End_Object 
 
         Object oentrenadorApellido is a cWebForm
@@ -53,16 +53,33 @@ Object oZoomEntrenador is a cWebView
             Set piColumnSpan to 12
             Set piColumnIndex to 0
             Set peLabelPosition to lpTop
-            Set psLabel to "Apellido"
+            Set psLabel to "Apellido del Nuevo entrenador"
         End_Object 
 
         Object oentrenadorNacionalidad is a cWebForm
             Entry_Item entrenador.Nacionalidad
-            Set piColumnSpan to 10
+            Set piColumnSpan to 12
             Set piColumnIndex to 0
             Set peLabelPosition to lpTop
-            Set psLabel to "Nacionalidad"
+            Set psLabel to "Su Nacionalidad"
         End_Object 
+        
+        //Probando - Añadido webform para guardar nuevos entrenadores
+        Object oNombreEquipo is a cWebForm
+            Entry_Item equipo.Nombre
+            Set piColumnSpan to 12
+            Set piColumnIndex to 0
+            Set peLabelPosition to lpTop
+            Set psLabel to "¿A qué Equipo pertenece? -Recuerda que un entrenador solo puede pertenecer a un equipo."
+            Set pbPromptButton to True
+            
+            WebRegisterPath ntNavigateForward oSelectEquipo
+            Procedure OnPrompt
+                Send NavigatePath
+            End_Procedure
+            
+        End_Object
+        
     End_Object 
 
     Object oActionGroup is a cWebMenuGroup

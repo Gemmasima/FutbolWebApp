@@ -7,13 +7,35 @@ GroupCount=1
 HorizontalGroups=1
 [TabGroup0]
 GroupSize=40
-SelectedTab=0
+SelectedTab=2
 [Window0]
 Filename=Workspace Dashboard
 ViewType=101
 Top=26
 Left=0
-Bottom=703
-Right=1190
+Bottom=681
+Right=561
 TabIndex=0
+TabGroup=0
+[Window1]
+Filename=C:\DataFlex Projects\FutbolWebApp\AppSrc\SelectEntrenador.wo
+ViewType=1
+Top=26
+Left=0
+Bottom=681
+Right=561
+CursorLine=144
+CursorColumn=52
+TabIndex=1
+TabGroup=0
+[Window2]
+Filename=C:\DataFlex Projects\FutbolWebApp\AppSrc\ZoomEntrenador.wo
+ViewType=1
+Top=26
+Left=0
+Bottom=681
+Right=561
+CursorLine=55
+CursorColumn=23
+TabIndex=2
 TabGroup=0

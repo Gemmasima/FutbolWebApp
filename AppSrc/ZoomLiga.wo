@@ -35,7 +35,7 @@ Object oZoomLiga is a cWebView
             Set piColumnSpan to 12
             Set piColumnIndex to 0
             Set peLabelPosition to lpTop
-            Set psLabel to "Nombre"
+            Set psLabel to "Nombre de la Liga"
         End_Object 
 
         Object oligaPais is a cWebForm
@@ -43,7 +43,7 @@ Object oZoomLiga is a cWebView
             Set piColumnSpan to 10
             Set piColumnIndex to 0
             Set peLabelPosition to lpTop
-            Set psLabel to "Pais"
+            Set psLabel to "¿A qué país pertenece esa Liga?"
         End_Object 
 
         Object oligaEquipos is a cWebForm
@@ -51,7 +51,7 @@ Object oZoomLiga is a cWebView
             Set piColumnSpan to 2
             Set piColumnIndex to 0
             Set peLabelPosition to lpTop
-            Set psLabel to "Equipos"
+            Set psLabel to "¿Cuántos equipos tiene la liga?"
         End_Object 
     End_Object 
 
