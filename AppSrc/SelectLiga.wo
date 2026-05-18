@@ -33,6 +33,7 @@ Object oSelectLiga is a cWebView
         Set pbFillHeight to True
         Set pbShowHeader to False
         Set piSortColumn to 0
+        Set pbServerOnRowClick to True
 
         Object oligaNombre is a cWebColumn
             Entry_Item liga.Nombre
@@ -95,7 +96,6 @@ Object oSelectLiga is a cWebView
                     Case Break
 
                 Case Else // must be nfUndefined
-                    //Liga no tiene padre pq es la tabla raiz
                     //Send NavigateForward of oSelectView Self
 
             Case End

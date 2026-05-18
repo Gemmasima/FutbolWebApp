@@ -37,16 +37,17 @@ Object oWebApp is a cWebApp
             Set peRegion to prLeft
             Set piWidth to 50
             
+            //La "hamburguesa" 
             Object oMenuButton is a cWebMenuButton
                 Set piMenuHeight to 500
 
                 Object oDashboard_itm is a cWebMenuItem
                     Set psCaption to C_$Dashboard
                     
-                    WebRegisterPath ntNavigateBegin oDashboard
+                    WebRegisterPath ntNavigateBegin oDashboard //NavBegin - no tiene en cuenta nada.
 
                     Procedure OnClick
-                        Send NavigatePath
+                        Send NavigatePath 
                     End_Procedure
                 End_Object
 

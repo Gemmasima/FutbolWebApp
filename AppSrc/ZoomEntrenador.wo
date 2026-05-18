@@ -21,18 +21,18 @@ Object oZoomEntrenador is a cWebView
     Set Verify_Save_Msg to 0
     Set piMaxWidth to 1024
 
-    Object oliga_DD is a cligaDataDictionary
+    Object oliga_DD is a cligaDataDictionary //Padre
     End_Object 
-    //Equipo tienen una FK a Liga. La de arriba
-    Object oequipo_DD is a cequipoDataDictionary
+    //Equipo tienen una FK a Liga. 
+    Object oequipo_DD is a cequipoDataDictionary //hijo de Liga y padre de Equipo
         Set DDO_Server To oliga_DD
     End_Object 
-    //Entrenador tiene una FK a Equipo. La de arriba
-    Object oentrenador_DD is a centrenadorDataDictionary
+    //Entrenador tiene una FK a Equipo. 
+    Object oentrenador_DD is a centrenadorDataDictionary //Hijo de Equipo
         Set DDO_Server To oequipo_DD
     End_Object 
-
-    Set Main_DD To oentrenador_DD
+   
+    Set Main_DD to oentrenador_DD //DD Principal es Entrenador
     Set Server  To oentrenador_DD
 
 
@@ -64,18 +64,19 @@ Object oZoomEntrenador is a cWebView
             Set psLabel to "Su Nacionalidad"
         End_Object 
         
-        //Probando - Añadido webform para guardar nuevos entrenadores
+        //Este es el objeto que relaciona Entrenador con el Padre que es Equipo.
         Object oNombreEquipo is a cWebForm
             Entry_Item equipo.Nombre
             Set piColumnSpan to 12
             Set piColumnIndex to 0
             Set peLabelPosition to lpTop
             Set psLabel to "¿A qué Equipo pertenece? -Recuerda que un entrenador solo puede pertenecer a un equipo."
-            Set pbPromptButton to True
+            Set pbPromptButton to True //es la lupa que lleva a selectEquipo. hay que poner la vista en edición.
             
-            WebRegisterPath ntNavigateForward oSelectEquipo
-            Procedure OnPrompt
-                Send NavigatePath
+            //este procedure lo he tenido que crear para que me lleve al SelectEquipo 
+            WebRegisterPath ntNavigateForward oSelectEquipo //con relación
+            Procedure OnPrompt //la accion de clicar sobre la lupa - InvokingObject hacia S.Equipo
+                Send NavigatePath //al clicar inicia la navegación navigateforward a S.Equipo
             End_Procedure
             
         End_Object
@@ -83,7 +84,7 @@ Object oZoomEntrenador is a cWebView
     End_Object 
 
     Object oActionGroup is a cWebMenuGroup
-
+        
         Object oSaveBtn is a cWebMenuItem
             Set psCSSClass to "WebSaveMenuItem"
             Set psCaption to "Save"
@@ -161,6 +162,11 @@ Object oZoomEntrenador is a cWebView
         Send NavigateClose Self
     End_Procedure
 
+    /*Es un evento de la vista y pregunta que quieres hacer al llegar a esa vista. Hay que ponerle el parametro de entrada
+    de la información que se le está pasando, tienen informacion de la vista que me esta invocando (Integer hoInvokingView)
+    y tiene la información del objeto que me está invocando (Integer hoInvokingObject).
+    Analogia -Viaje en tren Malaga a Madrid-: OnNavigateForward=Madrid; hoInvokingView=Malaga; hoInvokingObject=Tren; 
+    tWebNavigateData y NavigateData= Maletas, reserva hotel,...  */
     Procedure OnNavigateForward tWebNavigateData NavigateData Integer hoInvokingView Integer hoInvokingObject
         Case Begin
             Case (NavigateData.eNavigateType = nfFromMain)
@@ -180,7 +186,17 @@ Object oZoomEntrenador is a cWebView
         Case End
 
         Send SetActionButtons
-
+        
+        /* Esto es lo que se pone por defecto en un zoom: Si he venido al zoomEntrenador, seleccionando un entrenador ponme el nombre, 
+        si no hay un record es que vienes de viewnewrecord por lo tanto pon Nuevo entrenador */
+        If (HasRecord(Server(Self))) Begin
+            Send SetHeaderCaption   ("Entrenador:"*entrenador.Nombre)
+            Send SetBreadcrumbCaption entrenador.Nombre
+        End
+        Else Begin
+            Send SetHeaderCaption   "Nuevo entrenador"
+            Send SetBreadcrumbCaption "Nuevo"
+        End 
     End_Procedure
 
 End_Object 

@@ -1,6 +1,4 @@
 ﻿// C:\DataFlex Projects\FutbolWebApp\AppSrc\SelectEquipo.wo
-// SelectEquipo
-//
 
 Use cWebView.pkg
 Use cWebList.pkg
@@ -11,6 +9,7 @@ Use cWebColumn.pkg
 
 Use cligaDataDictionary.dd
 Use cequipoDataDictionary.dd
+Use centrenadorDataDictionary.dd
 
 Object oSelectEquipo is a cWebView
     Set psCaption to "SelectEquipo"
@@ -27,6 +26,10 @@ Object oSelectEquipo is a cWebView
         Set DDO_Server To oliga_DD
     End_Object 
 
+    Object oentrenador_DD is a centrenadorDataDictionary
+        Set DDO_Server to oEquipo_DD
+    End_Object
+    
     Set Main_DD To oequipo_DD
     Set Server  To oequipo_DD
 
@@ -34,7 +37,7 @@ Object oSelectEquipo is a cWebView
     Object oList is a cWebList
         Set piColumnSpan to 0
         Set psCSSClass to "MobileList"
-        Set pbServerOnRowClick to True
+        Set pbServerOnRowClick to True //Activado - Cuando clico en una fila de la lista pasa algo. Mirar Procedure OnRowClick
         Set pbFillHeight to True
         Set pbShowHeader to False
         Set piSortColumn to 0
@@ -50,8 +53,9 @@ Object oSelectEquipo is a cWebView
             Set psCaption to "equipo.LigaID"
             Set piWidth to 124
         End_Object 
-
-        Object oDetailButton is a cWebColumnButton
+        
+        //InvokingObject
+        Object oDetailButton is a cWebColumnButton 
             Set psCaption to "btn"
             Set piWidth to 45
             Set pbFixedWidth to True
@@ -59,13 +63,14 @@ Object oSelectEquipo is a cWebView
             Set piListRowSpan to 1
             Set psBtnCssClass to "WebButtonIcon WebIcon_Info"
             Set peAlign to alignRight
-
+            
+            //Navegación con relación
             WebRegisterPath ntNavigateForward oZoomEquipo
 
             Procedure OnClick
                 Send NavigatePath
             End_Procedure
-
+            //Este evento se produce dentro del InvokingObject
             Procedure OnGetNavigateForwardData tWebNavigateData ByRef NavigateData Handle hoToView
                 Move True to NavigateData.bReadOnly
             End_Procedure
@@ -75,15 +80,18 @@ Object oSelectEquipo is a cWebView
         //es selectLiga pq es su padre, es decir Equipo depende de Liga
         WebRegisterPath ntNavigateForward oSelectLiga 
 
-        Procedure OnRowClick String sRowId
-            tWebNavigateData NavigateData
+        //Evento de la lista WebList - Clicar en una fila de la lista
+        Procedure OnRowClick String sRowId 
+            /*Cuando clico en la fila de la lista obtengo la informacion de como he llegado yo aqui. Analogia: he venido desde Madrid, en tren 
+            y tengo una reserva en un hotel, con el Get saco toda esta información */
+            tWebNavigateData NavigateData 
             Get GetNavigateData to NavigateData
-
+            //Dependiendo del tipo de relación entre los DD, hare una cosa u otra
             Case Begin
                 Case (NavigateData.eNavigateType = nfFromParent)
                     Send NavigateForward of oSelectLiga Self //Liga(Padre)
                     Case Break
-
+                //Si la navegacion viene de un hijo - Cierra la vista
                 Case (NavigateData.eNavigateType = nfFromChild)
                     Send NavigateClose Self
                     Case Break
@@ -136,7 +144,7 @@ Object oSelectEquipo is a cWebView
     Procedure OnNavigateForward tWebNavigateData NavigateData Integer hoInvokingView Integer hoInvokingObject
         WebSet pbRender of oNewButton to True
         WebSet pbRender of oDetailButton to True
-
+       
         Case Begin
             Case (NavigateData.eNavigateType = nfFromParent)
                 // If from parent, this is a constrained drill down
@@ -144,6 +152,7 @@ Object oSelectEquipo is a cWebView
 
             Case (NavigateData.eNavigateType = nfFromChild)
                 // If from child, this is a probably a parent lookup from a Zoom
+               
                 Case Break
 
             Case (NavigateData.eNavigateType = nfFromMain)
@@ -152,6 +161,8 @@ Object oSelectEquipo is a cWebView
                 Case Break
 
             Case Else // must be nfUndefined
+                
+             
                 // This may be the start of a drilldown query or this may be used for some kind of custom query.
 
         Case End

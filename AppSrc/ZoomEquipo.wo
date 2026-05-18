@@ -78,6 +78,7 @@ Object oZoomEquipo is a cWebView
 
     Object oActionGroup is a cWebMenuGroup
 
+        //Este es el objeto que va a cerrar la navegación
         Object oSaveBtn is a cWebMenuItem
             Set psCSSClass to "WebSaveMenuItem"
             Set psCaption to "Save"
@@ -155,6 +156,7 @@ Object oZoomEquipo is a cWebView
         Send NavigateClose Self
     End_Procedure
 
+    //Puerta de Entrada
     Procedure OnNavigateForward tWebNavigateData NavigateData Integer hoInvokingView Integer hoInvokingObject
         Case Begin
             Case (NavigateData.eNavigateType = nfFromMain)
@@ -174,7 +176,14 @@ Object oZoomEquipo is a cWebView
         Case End
 
         Send SetActionButtons
-
+         If (HasRecord(Server(Self))) Begin
+            Send SetHeaderCaption   ("Equipo:"*equipo.Nombre)
+            Send SetBreadcrumbCaption equipo.Nombre
+        End
+        Else Begin
+            Send SetHeaderCaption   "Nuevo equipo"
+            Send SetBreadcrumbCaption "Nuevo"
+        End 
     End_Procedure
 
 End_Object 

@@ -74,11 +74,12 @@ Object oDashboard is a cWebView
                 Set psCSSClass to "Tile LightAlternate"
                 Set psHtml to '<div class="WebCon_Sizer" data-ServerOnClick="openview"><div Class="Tile_Title">Equipo</div><div class="Tile_Subtitle"></div></div>'
                
-                                
-                WebRegisterPath ntNavigateForwardCustom oSelectEquipo
+                 //Este es el camino que tiene que hacer el NavigatePath y son navegación NavForCus, sin relación.             
+                WebRegisterPath ntNavigateForwardCustom oSelectEquipo 
                 
-                Procedure OnClick String sId String sParam
-                    Send NavigatePath
+                //Al clicar la targeta empieza la navegación con el NavigatePath y el WebResgisterPath le dice el camino que tiene que hacer.
+                Procedure OnClick String sId String sParam 
+                    Send NavigatePath //Navego con el Navigate
                 End_Procedure
                 
             End_Object   
@@ -149,7 +150,7 @@ Object oDashboard is a cWebView
         
     End_Object
     
-    
+    //Este proceso succede cada vez que se abre una vista.
     Procedure OnBeforeShow
         // Each time this view is shown we will update the appropriate information.
     End_Procedure

@@ -8,7 +8,11 @@ Use cWebMenuGroup.pkg
 Use cWebMenuItem.pkg
 Use cWebColumnButton.pkg
 Use cWebColumn.pkg
+Use ZoomPosicion.wo
+Use ZoomJugador.wo
+//Use ZoomJugadorPosicion.wo
 
+Use cjugadorposicionDataDictionary.dd
 Use cposicionDataDictionary.dd
 
 Object oSelectPosicion is a cWebView
@@ -41,7 +45,7 @@ Object oSelectPosicion is a cWebView
         End_Object 
 
         Object oDetailButton is a cWebColumnButton
-            Set psCaption to "btn"
+            Set psCaption to "Detalles"
             Set piWidth to 45
             Set pbFixedWidth to True
             Set pbResizable to False

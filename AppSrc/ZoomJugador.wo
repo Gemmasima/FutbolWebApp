@@ -11,6 +11,8 @@ Use cWebForm.pkg
 Use cligaDataDictionary.dd
 Use cequipoDataDictionary.dd
 Use cjugadorDataDictionary.dd
+Use cposicionDataDictionary.dd
+Use cjugadorposicionDataDictionary.dd
 
 Object oZoomJugador is a cWebView
     Set piColumnCount to 12
@@ -21,9 +23,10 @@ Object oZoomJugador is a cWebView
     Set Verify_Save_Msg to 0
     Set piMaxWidth to 1024
 
+    
     Object oliga_DD is a cligaDataDictionary
     End_Object 
-
+        
     Object oequipo_DD is a cequipoDataDictionary
         Set DDO_Server To oliga_DD
     End_Object 
@@ -31,7 +34,10 @@ Object oZoomJugador is a cWebView
     Object ojugador_DD is a cjugadorDataDictionary
         Set DDO_Server To oequipo_DD
     End_Object 
-
+    
+    Object oposicion_DD is a cposicionDataDictionary
+    End_Object
+   
     Set Main_DD To ojugador_DD
     Set Server  To ojugador_DD
 
@@ -63,7 +69,7 @@ Object oZoomJugador is a cWebView
             Set peLabelPosition to lpTop
             Set psLabel to "Su Nacionalidad"
         End_Object 
-
+                
         Object oequipoNombre is a cWebForm
             Entry_Item equipo.Nombre
             Set piColumnSpan to 12
@@ -72,7 +78,7 @@ Object oZoomJugador is a cWebView
             Set psLabel to "Nombre del equipo dónde juega"
             Set pbPromptButton to True
             
-            //Va a Equipo pq el campo equipoNombre es un campo de la tabla Equipo
+            //Va a SelectEquipo pq el campo equipoNombre es un campo de la tabla Equipo
             WebRegisterPath ntNavigateForward oSelectEquipo
 
             Procedure OnPrompt
@@ -111,6 +117,17 @@ Object oZoomJugador is a cWebView
                 Send NavigatePath
             End_Procedure
         End_Object 
+        
+         Object oPosicionButton is a cWebButton
+            Set piColumnSpan to 6
+            Set psCaption to "Posición"
+            
+            WebRegisterPath ntNavigateForwardCustom oSelectPosicion
+            
+            Procedure OnClick
+                Send NavigatePath
+            End_Procedure
+        End_Object
     End_Object 
 
     Object oActionGroup is a cWebMenuGroup
@@ -211,6 +228,15 @@ Object oZoomJugador is a cWebView
         Case End
 
         Send SetActionButtons
+        
+         If (HasRecord(Server(Self))) Begin
+            Send SetHeaderCaption   ("Jugador:"*jugador.Nombre)
+            Send SetBreadcrumbCaption jugador.Nombre
+        End
+        Else Begin
+            Send SetHeaderCaption   "Nuevo jugador"
+            Send SetBreadcrumbCaption "Nuevo"
+        End 
 
     End_Procedure
 
