@@ -13,6 +13,7 @@ Use cequipoDataDictionary.dd
 Use cjugadorDataDictionary.dd
 Use cposicionDataDictionary.dd
 Use cjugadorposicionDataDictionary.dd
+Use cWebGroup.pkg
 
 Object oZoomJugador is a cWebView
     Set piColumnCount to 12
@@ -117,17 +118,33 @@ Object oZoomJugador is a cWebView
                 Send NavigatePath
             End_Procedure
         End_Object 
-        
+                  
+        Object oDetallesGroup is a cWebGroup
+            Set piColumnCount to 2
+            Set piColumnSpan to 2
+            Set psCaption to "Detalles"
+            
          Object oPosicionButton is a cWebButton
-            Set piColumnSpan to 6
+            Set piColumnSpan to 2
             Set psCaption to "Posición"
             
             WebRegisterPath ntNavigateForwardCustom oSelectPosicion
-            
             Procedure OnClick
                 Send NavigatePath
             End_Procedure
-        End_Object
+         End_Object
+         
+         Object oDespedirButton is a cWebButton
+            Set piColumnSpan to 2
+            Set piColumnIndex to 10
+            Set psCaption to "Despedir"
+            
+            Procedure OnClick
+                Send Clear of oequipo_DD
+            End_Procedure
+            
+         End_Object    
+        End_Object                    
     End_Object 
 
     Object oActionGroup is a cWebMenuGroup

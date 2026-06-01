@@ -98,8 +98,7 @@ Object oZoomEntrenador is a cWebView
             Set psCaption to "Despedir"
             
             WebSetResponsive piColumnCount rmMobile to 1
-           
-           
+                      
            Object oEquipoForm is a cWebForm
             Entry_Item equipo.Nombre
             Set piColumnCount to 6

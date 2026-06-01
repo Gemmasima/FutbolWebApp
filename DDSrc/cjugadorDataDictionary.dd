@@ -9,18 +9,21 @@ Class cjugadorDataDictionary is a DataDictionary
     
     Procedure Construct_Object
         Forward Send Construct_Object
-        Set Main_File to jugador.File_Number
-
-        Set Add_Server_File to equipo.File_Number
-
-        Set Add_Client_File to hijojugador.File_Number
-        Set Add_Client_File to jugadorposicion.File_Number
-
+        Set Main_File to jugador.File_Number //asociar un DD a una unica tabla y no se puede tocar
+      
+      //Estos son los tipos de relaciones que tiene con otros DD
+        Set Add_Server_File to equipo.File_Number           //este DD (jugador) apunta al DD (equipo) hijo a padre
+        Set Add_Client_File to hijojugador.File_Number      //este DD (jugador) esta apuntado por el DD (hijojugador) padre a hijo       
+        Set Add_Client_File to jugadorposicion.File_Number  //este DD (jugador) esta apuntado por el DD (jugadorposicion) padre a hijo   
+       
+       //Como se comportan los datos de esta tabla si son usados como FK
         Set Foreign_Field_Option DD_KEYFIELD DD_NOPUT to True
         Set Foreign_Field_Option DD_KEYFIELD DD_FINDREQ to True
         Set Foreign_Field_Option DD_INDEXFIELD DD_NOPUT to True
         Set Foreign_Field_Option DD_DEFAULT DD_DISPLAYONLY to True
+        
+        //Jugador ID es un Field State= Primary Key. y hace dos cosas: le dice que este campo es PK y lo va a proteger
+        Set Key_Field_State Field jugador.ID to True
 
     End_Procedure
-
 End_Class
