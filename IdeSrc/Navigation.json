@@ -1,11 +1,11 @@
 {
    "Projects": [
      {
-       "nZoom": 0.55,
-       "nPositionX": -241.81817627,
-       "nPositionY": -42.54544449,
-       "nWidth": 1921.81817627,
-       "nHeight": 918.18173599,
+       "nZoom": 0.4,
+       "nPositionX": -813.5,
+       "nPositionY": 40.50003052,
+       "nWidth": 2702.5,
+       "nHeight": 1262.49984741,
        "sProject": "WebApp.src",
        "bShowWebApp": false,
        "bShowHidden": false,
@@ -13,8 +13,8 @@
          {
            "Name": "oDashboard",
            "Position": {
-             "sX": "108.75",
-             "sY": "12.5"
+             "sX": "125",
+             "sY": "0"
            },
            "TabColor": {
              "sColorDM": "#006EFF",
@@ -25,8 +25,8 @@
          {
            "Name": "oLogin",
            "Position": {
-             "sX": "468.75",
-             "sY": "75"
+             "sX": "125",
+             "sY": "-125"
            },
            "TabColor": {
              "sColorDM": "#002C68",
@@ -37,8 +37,8 @@
          {
            "Name": "oSelectEntrenador",
            "Position": {
-             "sX": "363.75",
-             "sY": "315"
+             "sX": "-150",
+             "sY": "300"
            },
            "TabColor": {
              "sColorDM": "#064F26",
@@ -49,8 +49,8 @@
          {
            "Name": "oSelectEquipo",
            "Position": {
-             "sX": "292.5",
-             "sY": "795"
+             "sX": "700",
+             "sY": "300"
            },
            "TabColor": {
              "sColorDM": "#03C560",
@@ -61,8 +61,8 @@
          {
            "Name": "oSelectJugador",
            "Position": {
-             "sX": "723.75",
-             "sY": "315"
+             "sX": "250",
+             "sY": "300"
            },
            "TabColor": {
              "sColorDM": "#00429B",
@@ -73,8 +73,8 @@
          {
            "Name": "oSelectLiga",
            "Position": {
-             "sX": "405",
-             "sY": "1250"
+             "sX": "1150",
+             "sY": "275"
            },
            "TabColor": {
              "sColorDM": "#03C560",
@@ -85,8 +85,8 @@
          {
            "Name": "oSelectPosicion",
            "Position": {
-             "sX": "0",
-             "sY": "327.5"
+             "sX": "-525",
+             "sY": "300"
            },
            "TabColor": {
              "sColorDM": "#0058CF",
@@ -109,8 +109,8 @@
          {
            "Name": "oZoomEntrenador",
            "Position": {
-             "sX": "618.75",
-             "sY": "580"
+             "sX": "-175",
+             "sY": "850"
            },
            "TabColor": {
              "sColorDM": "#FF5E00",
@@ -121,8 +121,8 @@
          {
            "Name": "oZoomEquipo",
            "Position": {
-             "sX": "292.5",
-             "sY": "1035"
+             "sX": "1125",
+             "sY": "725"
            },
            "TabColor": {
              "sColorDM": "#FF5E00",
@@ -133,8 +133,8 @@
          {
            "Name": "oZoomJugador",
            "Position": {
-             "sX": "978.75",
-             "sY": "555"
+             "sX": "300",
+             "sY": "1000"
            },
            "TabColor": {
              "sColorDM": "#672606",
@@ -145,8 +145,8 @@
          {
            "Name": "oZoomLiga",
            "Position": {
-             "sX": "0",
-             "sY": "1425"
+             "sX": "1400",
+             "sY": "1000"
            },
            "TabColor": {
              "sColorDM": "#9B3904",
@@ -157,8 +157,8 @@
          {
            "Name": "oZoomPosicion",
            "Position": {
-             "sX": "0",
-             "sY": "592.5"
+             "sX": "-800",
+             "sY": "875"
            },
            "TabColor": {
              "sColorDM": "#341304",

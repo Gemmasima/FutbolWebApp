@@ -3,28 +3,5 @@ CurrentProject=WebApp.src
 Location=C:\DataFlex Projects\FutbolWebApp\IdeSrc\gemma_Studio.dsk
 CreateNew=5
 [TabWindows]
-GroupCount=1
+GroupCount=0
 HorizontalGroups=0
-[TabGroup0]
-GroupSize=40
-SelectedTab=0
-[Window0]
-Filename=C:\DataFlex Projects\FutbolWebApp\AppSrc\SelectEquipo.wo
-ViewType=1
-Top=26
-Left=0
-Bottom=703
-Right=1607
-CursorLine=56
-CursorColumn=19
-TabIndex=1
-TabGroup=0
-[Window1]
-Filename=C:\DataFlex Projects\FutbolWebApp\AppSrc\ZoomLiga.wo
-ViewType=102
-Top=26
-Left=0
-Bottom=703
-Right=1607
-TabIndex=0
-TabGroup=0
