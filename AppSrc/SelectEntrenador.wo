@@ -169,8 +169,7 @@ Object oSelectEntrenador is a cWebView
 
         Case End
         
-// ToDo:  ojo que estas poniendo cosas para entender las navegaciones. 
-        Send ShowInfoBox "Probando: OnNavigateForward de SelectEntrenador"
+
     End_Procedure
     
    // Este evento no se muestra en pantalla pq ya se está mostrando, no se puede enviar un infobox cuando ya estoy

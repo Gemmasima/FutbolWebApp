@@ -10,9 +10,10 @@ Class cjugadorDataDictionary is a DataDictionary
     Procedure Construct_Object
         Forward Send Construct_Object
         Set Main_File to jugador.File_Number //asociar un DD a una unica tabla y no se puede tocar
-      
+              
       //Estos son los tipos de relaciones que tiene con otros DD
         Set Add_Server_File to equipo.File_Number           //este DD (jugador) apunta al DD (equipo) hijo a padre
+        Set ParentNullAllowed  equipo.File_Number to True          //Puede tener un padre nulleable    
         Set Add_Client_File to hijojugador.File_Number      //este DD (jugador) esta apuntado por el DD (hijojugador) padre a hijo       
         Set Add_Client_File to jugadorposicion.File_Number  //este DD (jugador) esta apuntado por el DD (jugadorposicion) padre a hijo   
        

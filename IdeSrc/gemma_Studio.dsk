@@ -3,5 +3,39 @@ CurrentProject=WebApp.src
 Location=C:\DataFlex Projects\FutbolWebApp\IdeSrc\gemma_Studio.dsk
 CreateNew=5
 [TabWindows]
-GroupCount=0
+GroupCount=1
 HorizontalGroups=0
+[TabGroup0]
+GroupSize=40
+SelectedTab=1
+[Window0]
+Filename=jugador
+ViewType=4
+Top=26
+Left=0
+Bottom=748
+Right=1372
+TabIndex=0
+TabGroup=0
+[Window1]
+Filename=C:\DataFlex Projects\FutbolWebApp\AppSrc\ZoomJugador.wo
+ViewType=1
+Top=26
+Left=0
+Bottom=748
+Right=1372
+CursorLine=57
+CursorColumn=12
+TabIndex=2
+TabGroup=0
+[Window2]
+Filename=C:\DataFlex Projects\FutbolWebApp\DDSrc\cjugadorDataDictionary.dd
+ViewType=1
+Top=26
+Left=0
+Bottom=748
+Right=1372
+CursorLine=15
+CursorColumn=57
+TabIndex=1
+TabGroup=0

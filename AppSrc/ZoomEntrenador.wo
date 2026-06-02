@@ -68,14 +68,31 @@ Object oZoomEntrenador is a cWebView
             Set psLabel to "Apellido del Nuevo entrenador"
         End_Object 
 
+        Object oInfoGroup is a cWebGroup
+            Set piColumnCount to 12
+            Set piColumnSpan to 12
+            Set psCaption to "Información del Entrenador"
+            
+            WebSetResponsive piColumnCount rmMobile to 1
+            
         Object oentrenadorNacionalidad is a cWebForm
             Entry_Item entrenador.Nacionalidad
-            Set piColumnSpan to 12
+            Set piColumnSpan to 6
             Set piColumnIndex to 0
             Set peLabelPosition to lpTop
             Set psLabel to "Su Nacionalidad"
         End_Object 
         
+           Object oEquipoForm is a cWebForm
+            Entry_Item equipo.Nombre
+            Set piColumnCount to 6
+            Set psLabel to "Equipo"
+            Set peLabelPosition to lpTop
+            Set pbPromptButton to True
+               Set piColumnIndex to 6
+               Set piColumnSpan to 6
+           End_Object
+           
         //Este es el objeto que relaciona Entrenador con el Padre que es Equipo.
         Object oNombreEquipo is a cWebForm
             Entry_Item equipo.Nombre
@@ -90,22 +107,8 @@ Object oZoomEntrenador is a cWebView
             Procedure OnPrompt //la accion de clicar sobre la lupa - InvokingObject hacia S.Equipo
                 Send NavigatePath //al clicar inicia la navegación navigateforward a S.Equipo
             End_Procedure
-        End_Object  
-        
-        Object oDetallesDespedir is a cWebGroup
-            Set piColumnCount to 12
-            Set piColumnSpan to 12
-            Set psCaption to "Despedir"
-            
-            WebSetResponsive piColumnCount rmMobile to 1
-                      
-           Object oEquipoForm is a cWebForm
-            Entry_Item equipo.Nombre
-            Set piColumnCount to 6
-            Set psLabel to "Equipo"
-            Set peLabelPosition to lpTop
-            Set pbPromptButton to True
-           End_Object
+        End_Object          
+                   
            
            WebRegisterPath ntNavigateForward oSelectEquipo
            
