@@ -1,41 +1,52 @@
 [Workspace]
 CurrentProject=WebApp.src
 Location=C:\DataFlex Projects\FutbolWebApp\IdeSrc\gemma_Studio.dsk
-CreateNew=5
+CreateNew=3
 [TabWindows]
 GroupCount=1
 HorizontalGroups=0
 [TabGroup0]
 GroupSize=40
-SelectedTab=1
+SelectedTab=2
 [Window0]
-Filename=jugador
+Filename=C:\DataFlex Projects\FutbolWebApp\AppSrc\ZoomPosicion.wo
+ViewType=1
+Top=26
+Left=0
+Bottom=748
+Right=1372
+CursorLine=55
+CursorColumn=29
+TabIndex=0
+TabGroup=0
+[Window1]
+Filename=C:\DataFlex Projects\FutbolWebApp\DDSrc\cjugadorposicionDataDictionary.dd
+ViewType=1
+Top=26
+Left=0
+Bottom=748
+Right=1372
+CursorLine=0
+CursorColumn=0
+TabIndex=3
+TabGroup=0
+[Window2]
+Filename=C:\DataFlex Projects\FutbolWebApp\AppSrc\SelectJugadorPosicion.wo
+ViewType=1
+Top=26
+Left=0
+Bottom=748
+Right=1372
+CursorLine=13
+CursorColumn=22
+TabIndex=1
+TabGroup=0
+[Window3]
+Filename=jugadorposicion
 ViewType=4
 Top=26
 Left=0
 Bottom=748
 Right=1372
-TabIndex=0
-TabGroup=0
-[Window1]
-Filename=C:\DataFlex Projects\FutbolWebApp\AppSrc\ZoomJugador.wo
-ViewType=1
-Top=26
-Left=0
-Bottom=748
-Right=1372
-CursorLine=57
-CursorColumn=12
 TabIndex=2
-TabGroup=0
-[Window2]
-Filename=C:\DataFlex Projects\FutbolWebApp\DDSrc\cjugadorDataDictionary.dd
-ViewType=1
-Top=26
-Left=0
-Bottom=748
-Right=1372
-CursorLine=15
-CursorColumn=57
-TabIndex=1
 TabGroup=0

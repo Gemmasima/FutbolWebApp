@@ -25,7 +25,6 @@ Object oZoomPosicion is a cWebView
     Set Main_DD To oposicion_DD
     Set Server  To oposicion_DD
 
-
     Object oWebMainPanel is a cWebPanel
         Set piColumnCount to 12
         WebSetResponsive piColumnCount rmMobile to 4
