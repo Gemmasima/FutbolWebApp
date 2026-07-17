@@ -1,0 +1,11 @@
+# Datos y credenciales generados en tiempo de ejecución (no deben subirse a git)
+Data/
+AppSrc/LoginEncryptionKey.inc
+
+# Notas personales
+AppSrc/ApuntesGemma.txt
+
+# Archivos compilados/generados
+Programs/*.exe
+Programs/*.dbg
+*.log
